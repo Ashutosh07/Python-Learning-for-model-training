@@ -1,0 +1,725 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+
+  <div class="border-box-sizing">
+    <div class="container">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr/>
+<h3><span style="color:#0b486b;">SIT744 Practical Machine Learning for Data Science</span><a rel="noopener" class="anchor-link" href="#SIT744-Practical-Machine-Learning-for-Data-Science">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr/>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1># <span style="color:#0b486b;">Assignment One: Mastering Machine Learning Process</span><a rel="noopener" class="anchor-link" href="##-Assignment-One:-Mastering-Machine-Learning-Process">&#182;</a></h1><h3><span style="color:#0b486b;">Due: 11:59 pm 18 August 2019 (Sunday)</span><a rel="noopener" class="anchor-link" href="#Due:-11:59-pm-18-August-2019-(Sunday)">&#182;</a></h3><h4><span style="color:red;">Important note:</span> This is an <strong>individual</strong> assignment. It contributes <strong>25%</strong> to your final mark. Read the assignment instruction carefully.<a rel="noopener" class="anchor-link" href="#Important-note:-This-is-an-individual-assignment.-It-contributes-25%-to-your-final-mark.-Read-the-assignment-instruction-carefully.">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This notebook has been prepared for you to complete Assignment 1. Some sections have been partially completed to help you get started. <strong>The total marks for this notebook are 80 marks, which will be re-scaled to 25 marks in the grade.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>Before you start, read the entire notebook carefully once to understand what you need to do. <br/><br/></p>
+</li>
+<li><p>For each cell marked with <strong>#YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</strong>, there will be places where you <strong>must</strong> supply your own codes when instructed. <br/><br/></p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2><span style="color:#0b486b;">Instruction</span><a rel="noopener" class="anchor-link" href="#Instruction">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This assignment contains <strong>three</strong> parts, in increasing order of machine learning sophistication levels as we go through the process of building an effective machine learning solution.</p>
+<ul>
+<li>Part 1: Examine and understand your dataset <strong>[10 points]</strong></li>
+<li>Part 2: Build Model Intuition: What Works and What doesn&#39;t <strong>[57 points]</strong></li>
+<li>Part 3: Outlier/Anomaly Detection Survey: Write a Report to summarize at least 5 effective outlier/anomaly detection models and approaches published in recent 5 years <strong>[13 points]</strong></li>
+</ul>
+<p><strong>Hint</strong>: this assignment was essentially designed based on the first three lectures and practical lab sessions. You are strongly recommended to go through these contents thoroughly which might help you complete this assignment.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2><span style="color:#0b486b;">What to submit</span><a rel="noopener" class="anchor-link" href="#What-to-submit">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This assignment is to be completed individually and submitted to CloudDeakin. <strong>By the due date, you are required to submit the following files to the corresponding Assignment in CloudDeakin</strong>:</p>
+<ol>
+<li><span style="color:red;">**[YourID]\_assignment1\_solution.ipynb**</span>:  <strong>this is your Python notebook solution source file</strong>.</li>
+<li><span style="color:red;">**[YourID]\_assingment1\_output.html**</span>: <strong>this is the output of your Python notebook solution <em>exported</em> in HTML format</strong>.</li>
+<li><span style="color:red;">**[YourID]\_assingment1\_report.doc**</span>: <strong>this is the report of your outlier detection survey work</strong>.</li>
+</ol>
+<p>For example, if your student ID is: 123456, you will then need to submit two files:</p>
+<ul>
+<li>123456_assignment1_solution.ipynb</li>
+<li>123456_assignment1_output.html</li>
+<li>123456_assignment1_Report.doc</li>
+</ul>
+<p><span style="color:red;">Now, please proceed to content below to complete your assignment!</span></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr/>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2><span style="color:#0b486b;">Part 1: Examine and understand your dataset </span><a rel="noopener" class="anchor-link" href="#Part-1:-Examine-and-understand-your-dataset-">&#182;</a></h2><div style="text-align: right;"><span style="color:red;">**[Total mark for this part: 10 points]**.<span></span></span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This assignment shares a similar theme with the practical lab session in week 2. You are required to work with the NUS_WIDE data for the task of face recognition.</p>
+<p>The first step in the process is to understand your data. You are given the following segments of codes</p>
+<ul>
+<li>to import necessary libraries, </li>
+<li>to define a utility function to display face images from the dataset, and</li>
+<li>to load the dataset.</li>
+</ul>
+<p>They are provided for you to get started. Please <strong>do not</strong> change the provided code as well the variables and function names as you will need them to complete subsequent tasks.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr/>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Note</strong>: The following packages will be required for this assignment. If you need to import more packages, you might append them to the end of the cell.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">preprocessing</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">decomposition</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">svm</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="k">import</span> <span class="n">Pipeline</span>
+
+<span class="c1"># append your own importing packages here if needed</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># this function is a utility to display face images from the dataset</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline  
+
+<span class="k">def</span> <span class="nf">display_faces</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">num2display</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num2display</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span><span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bone</span><span class="p">)</span>
+        
+        <span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">label</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Warning</strong>: the following command will download the dataset (approx. 200 Mb) to your local computer. You may need to install the <em>Pillow</em> package first by running the following command in the Anaconda prompt.</p>
+
+</div>
+</div>
+</div>conda install --channel conda-forge pillow
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">fetch_lfw_people</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_lfw_people</span><span class="p">(</span><span class="n">min_faces_per_person</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># store features in variable X and the label in variable y as in our usual convention notation.</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">faces</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">faces</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr/>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You should realise that executing the above segment of codes will result in:</p>
+<ul>
+<li>variable <code>faces</code> containing the fetched dataset</li>
+<li>variables <code>X</code> and <code>y</code> which contain the features and the labels respectively.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We first examine the NUS_WIDE dataset. You are asked to supply your own codes in the following cells to answer the following questions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4><span style="color:red;">**Question 1.1**</span>. Print out the description of the dataset using the variable <code>faces</code>.<a rel="noopener" class="anchor-link" href="#**Question-1.1**.-Print-out-the-description-of-the-dataset-using-the-variable-faces.">&#182;</a></h4><div style="text-align: right;"><span style="color:red;">**[0.5 points]**</span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4><span style="color:red;">**Question 1.2**</span>. Print out the total number of data points in this dataset.<a rel="noopener" class="anchor-link" href="#**Question-1.2**.-Print-out-the-total-number-of-data-points-in-this-dataset.">&#182;</a></h4><div style="text-align: right;"><span style="color:red;">**[1.5 points]**</span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+
+<span class="c1"># Student can use different field such as data, images target_names to get the number of data points </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4><span style="color:red;">**Question 1.3**</span>. Each class (or label) in this dataset corresponds to a public figure. Print out the number of classes, and the corresponding person name for each class. Print out 50 photos of <em>Ariel Sharon</em> and 50 photos of <em>Hugo Chavez</em>. You might decide to use the function <code>display_faces</code> provided at the beginning of this assignment, or you can write your own codes.<a rel="noopener" class="anchor-link" href="#**Question-1.3**.-Each-class-(or-label)-in-this-dataset-corresponds-to-a-public-figure.-Print-out-the-number-of-classes,-and-the-corresponding-person-name-for-each-class.-Print-out-50-photos-of-Ariel-Sharon-and-50-photos-of-Hugo-Chavez.-You-might-decide-to-use-the-function-display_faces-provided-at-the-beginning-of-this-assignment,-or-you-can-write-your-own-codes.">&#182;</a></h4><div style="text-align: right;"><span style="color:red;">**[5 points]**</span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+
+<span class="c1"># print out the number of classes, and the corresponding name of each class</span>
+<span class="n">class_ids</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># [insert your code here]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">class_ids</span><span class="p">)):</span>
+    <span class="c1"># [insert your code here]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+
+<span class="c1"># print out 50 photos of Ariel Sharon and 50 photos of Hugo Chavez</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4><span style="color:red;">**Question 1.4**</span>. Given our problem of interest is face recognition, should we choose supervised or unsupervised machine learning methods? Explain why and list at least four ML algorithms that are suitable for this problem.<a rel="noopener" class="anchor-link" href="#**Question-1.4**.-Given-our-problem-of-interest-is-face-recognition,-should-we-choose-supervised-or-unsupervised-machine-learning-methods?-Explain-why-and-list-at-least-four-ML-algorithms-that-are-suitable-for-this-problem.">&#182;</a></h4><div style="text-align: right;"><span style="color:red;">**[1 point]**</span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5>Use this markdown cell to write your answer to this question.<a rel="noopener" class="anchor-link" href="#Use-this-markdown-cell-to-write-your-answer-to-this-question.">&#182;</a></h5><p>[<em>Enter our answer here</em>]</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4><span style="color:red;">**Question 1.5**</span>. create <em>a single train-split</em> with 20% of data for testing and the rest for training.<a rel="noopener" class="anchor-link" href="#**Question-1.5**.-create-a-single-train-split-with-20%-of-data-for-testing-and-the-rest-for-training.">&#182;</a></h4><div style="text-align: right;"><span style="color:red;">**[2 points]**</span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># split into a training and testing set</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="c1"># [insert your codes here]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr/>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3><span style="color:#0b486b;">Part 2: Build Model  </span><a rel="noopener" class="anchor-link" href="#Part-2:-Build-Model--">&#182;</a></h3><div style="text-align: right;"><span style="color:red;">**[Total mark for this part: 70 points]**.<span></span></span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After we have gained a good understanding of the dataset from the previous step, we should by now be clear of the following points:</p>
+<ul>
+<li>Do you have labels for this data? And hence, is it a supervised learning or unsupervised learning problem?</li>
+<li>Recall that machine learning prediction is about learning a function $y= f(x)$, where $y$ is your label. Python variables <code>X</code> and <code>y</code> have been constructed and stored for you.</li>
+<li>Variable <code>X</code> is a matrix, with each row is a vector $x_i$ assigned with label $y_i$. You should examine the data types (continuous, categorical, its dimensionality, etc.) of the features in <code>X</code> and the label in $y$. This will help you choose the right ML methods.</li>
+</ul>
+<p>These are the most common questions. Depending on the answers, more refined questions and considerations may be required for an improved solution.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As a machine learning practitioner, it is rarely the case that you can come up with the best solution at the first attempt. It is an iterative process. With the experience building up over time, you will be more efficient at it. <strong>The next step is to get your hand dirty, start to explore to see what work, what doesn&#39;t work</strong>. This process usually starts with models that are simple or more familiar to you.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4><span style="color:red;">**Question 2.1**</span>. Use a <em>single split-train approach</em> and <em>Logistic Regression</em> as the classifier, you will examine what works and what doesn&#39;t work for your data:<a rel="noopener" class="anchor-link" href="#**Question-2.1**.-Use-a-single-split-train-approach-and-Logistic-Regression-as-the-classifier,-you-will-examine-what-works-and-what-doesn&#39;t-work-for-your-data:">&#182;</a></h4><p>The total marks for this question are <span style="color:red;">**[34 points]**</span>, with the following detailed breakdown sub-questions:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red;">**(a)**</span> <strong>Write your code to use PCA for dimensionality reduction with 20 components to transform variable X to variable pca_X.</strong></p>
+<div style="text-align: right;"> <span style="color:red;">**[2 points]**</span> </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4><span style="color:red;">**(b)**</span> <strong>Use the reduced dimension features pca_X obtained in previous steps to write your code to show the performance (recall, precision, accuracy, F-score) using <em>Logistic Regression</em> as the classifier and a single train-split with 40% of data will be used for testing and the rest for training.</strong><a rel="noopener" class="anchor-link" href="#**(b)**-Use-the-reduced-dimension-features-pca_X-obtained-in-previous-steps-to-write-your-code-to-show-the-performance-(recall,-precision,-accuracy,-F-score)-using-Logistic-Regression-as-the-classifier-and-a-single-train-split-with-40%-of-data-will-be-used-for-testing-and-the-rest-for-training.">&#182;</a></h4><div style="text-align: right;"> <span style="color:red;">**[4 points]**</span> </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">precision_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">recall_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">f1_score</span>
+
+<span class="c1"># [insert your codes here]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red;">**(c)**</span> <strong>Use the reduced dimension features pca_X obtained in step (a) to write your code to show the performance (recall, precision, accuracy, F-score) <em>using Repeated Random Train-Split</em> (10 runs, each with 60/40 split for training and testing) on the original data. You <em>must</em> report both the mean and standard deviation of the performance for each evaluation metrics</strong>.</p>
+<div style="text-align: right;"> <span style="color:red;">**[8 points]**</span> </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">ShuffleSplit</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">cross_val_score</span>
+
+<span class="c1"># [insert your codes here]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red;">**(d)**</span> <strong>Use the reduced dimension features pca_X obtained in step (a) to write your code to show the performance (recall, precision, accuracy, F-score) using <em>K-fold cross-validation with k=10 folds</em>.</strong></p>
+<div style="text-align: right;"> <span style="color:red;">**[10 points]**</span> </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">KFold</span>
+
+<span class="c1"># [insert your codes here]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red;">**(e)**</span> <strong>Preparing a table to summarize the performances obtained from step (c) and (d) against recall, precision, accuracy and F-score from step (b). What conclusions can you draw from the comparison?</strong></p>
+<div style="text-align: right;"> <span style="color:red;">**[10 points]**</span> </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Use this markdown cell to write your answer to this question.</em></p>
+<p>[<em>Enter our answer here</em>]</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red;">**Question 2.2.**</span> <strong>Once you have built some intuition about the problem and the effectiveness of some modelling choices, if the initial results aren&#39;t too bad, you should start to gain some confidences in your approach. You are recommended to look at your results in the previous question again to convince yourselves of your results. Some questions you should starting asking are: Is your average prediction accuracy over 50%? over 70%? What else can you try to make it better? Is Linear SVM a good choice? Did the reduced dimension help improve the performance?</strong></p>
+<p><strong>The next step is then to &#39;package&#39; your code into some routine so that your investigation into your machine learning problem can be accelerated.</strong></p>
+<p>The total marks for this question are <span style="color:red;">**[23 points]**</span>, with the following detailed breakdown sub-questions:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>The following function is provided for you as an example of how one might &#39;package&#39; the important steps so far into a single function to help accelerate your analyses</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="k">import</span> <span class="n">Pipeline</span>
+
+<span class="k">def</span> <span class="nf">ml_algorithm_screening_face</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">model</span><span class="p">,</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">scoring_metrics</span><span class="p">,</span> <span class="n">pca_dim</span><span class="p">,</span> <span class="n">n_runs</span><span class="p">):</span>
+    <span class="n">estimators</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">seed</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pca_dim</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">estimators</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;pca&#39;</span><span class="p">,</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">pca_dim</span><span class="p">)))</span>
+    
+    <span class="n">estimators</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">model_name</span><span class="p">,</span><span class="n">model</span><span class="p">))</span>
+    <span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">estimators</span><span class="p">)</span>
+    <span class="n">kfold</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="n">n_runs</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring_metrics</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opps! something went wrong!&quot;</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Using  this function given above, you are asked to:</strong></p>
+<p><span style="color:red;">**(a)**</span> <strong>Write your code to call this function with the following specifications and print out the mean and standard deviation of the <em>accuracy</em> obtained.</strong></p>
+
+<pre><code>- model: Linear SVM (using hinge loss)
+- PCA dimnesion = 20
+- the number of runs=10
+
+</code></pre>
+<div style="text-align: right;"> <span style="color:red;">**[8 points]**</span> </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:red;">**(b)**</span><strong>Face recognition has a high-dimensional data problem typical  in modern machine learning. This explains why one might routinely use PCA to reduce its dimension.</strong></p>
+<p><strong>Write your code to search for right dimension from a list of <em>dim = {10, 20,..,150}</em> using the same setting in question 2.2(a).</strong></p>
+<ul>
+<li>Print out the results for each dimension.</li>
+<li>Use box-plot to visualize the medium and the interquartile range of the accuracy for each dimension on the same figure, and </li>
+<li>Report the dimension for PCA that gives the best result in term of accuracy.</li>
+</ul>
+<div style="text-align: right;"> <span style="color:red;">**[15 points]**<span> </span></span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&#160;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOU ARE REQUIRED TO INSERT YOUR CODES IN THIS CELL</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># [insert your code here]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3><span style="color:#0b486b;">Part 3: Outlier Detection Survey  </span><a rel="noopener" class="anchor-link" href="#Part-3:-Outlier-Detection-Survey--">&#182;</a></h3><div style="text-align: right;"><span style="color:red;">**[Total mark for this part: 13 points]**.<span></span></span></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You are required to read at least 5 papers relating to outlier detection in the recent 5 years. It will help gain a good understanding how/when to use outlier detection models, how these models work in different datasets. The report needs to include the below points:</p>
+<ul>
+<li>Explain why you choose the five models with at least 0.5 A4 Page at the begining of the report; <span style="color:red;">**[3 points]**.</span></li>
+<li>For each model, you need to do <span style="color:red;">**[2 points per model]**.</span><ul>
+<li>at least 5 outlier detection models with the reference information where the model is published;</li>
+<li>write 0.5 A4 Page for each model;</li>
+<li>summarize the full strengths and weakness of each model by clearly presenting the evidence from the experiments declared in their original papers; </li>
+<li>Evaluation metrics and available datasets used for each model.</li>
+</ul>
+</li>
+</ul>
+<p>One example report looks like &quot;On the Evaluation of Unsupervised Outlier Detection: Measures, Datasets, and an Empirical Study
+by G. O. Campos, A. Zimek, J. Sander, R. J. G. B. Campello, B. Micenkov&#225;, E. Schubert, I. Assent and M. E. Houle
+Data Mining and Knowledge Discovery 30(4): 891-927, 2016, DOI: 10.1007/s10618-015-0444-8&quot;. <a rel="noopener" href="https://link.springer.com/article/10.1007%2Fs10618-015-0444-8">https://link.springer.com/article/10.1007%2Fs10618-015-0444-8</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr/>
+<div style="text-align: center;">**END OF ASSIGNMENT ONE**</div>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+
+ 
+
+
+
+<script type="text/javascript" src="/d2l/common/math/MathML.js?v=20.21.1.27113-197 "></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() { D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=MML_HTMLorMML','https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML','130'); });</script></body></html>
